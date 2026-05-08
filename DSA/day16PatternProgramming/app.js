@@ -1,5 +1,5 @@
 //Day16
-//Q1- Right Triangle-Star Pattern
+//Q1- Right Triangle-Star Pattern.
 
 /*const prompt = require('prompt-sync')(); 
 
@@ -11,7 +11,7 @@ for (let i = 1; i <= n; i++) {
     console.log();
 }*/
 
-//Q2- Right Triangle-Number Pattern
+//Q2- Right Triangle-Number Pattern.
 
 /*const prompt = require('prompt-sync')(); 
 
@@ -23,7 +23,7 @@ for (let i = 1; i <= n; i++) {
     console.log();
 }*/
 
-//Q3- Right Triangle-Alphabet Pattern
+//Q3- Right Triangle-Alphabet Pattern.
 
 
 /*const prompt = require('prompt-sync')(); 
@@ -37,7 +37,7 @@ for (let i  = 0; i  < n; i++) {
 };*/
 
 
-//Q4- Inverted Right Triangle-Star Pattern
+//Q4- Inverted Right Triangle-Star Pattern.
 
 /*const prompt = require('prompt-sync')(); 
 
@@ -50,7 +50,7 @@ for (let i = 1; i <= n; i++) {
 };*/
 
 
-//Q5- Mirrored Right Triangle-Star Pattern
+//Q5- Mirrored Right Triangle-Star Pattern.
 
 /*const prompt = require('prompt-sync')(); 
 
@@ -64,7 +64,7 @@ for (let i = 1;i<=n; i++) {
     console.log();
 };*/
 
-//Q6-Print a V Shaped Pattern
+//Q6-Print a V Shaped Pattern.
 
 
 /*const prompt = require('prompt-sync')(); 
@@ -82,7 +82,7 @@ for (let i = 1; i <= n; i++) {
 }*/
 
 
-//Q7-Print an X-Shape Pattern
+//Q7-Print an X-Shape Pattern.
 
 /*const prompt = require('prompt-sync')(); 
 
