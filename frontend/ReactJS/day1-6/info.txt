@@ -1,0 +1,4 @@
+Day1 to 7- We get to know about BTS about the creation of React.
+Get to know about react and React Dom ,how virtual Dom is created.
+Diffing Algroithm and the Process and criteria of Reconciliation.
+More about React fiber two different phases Render Phase,Commit Phase.
