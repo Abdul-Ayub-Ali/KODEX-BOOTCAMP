@@ -15,7 +15,7 @@ const App = () => {
   }
   return (
     <div className="h-screen">
-      <h1>count : {count} {num}</h1>
+      <h1>count :{count}</h1>
       <button onClick={increment}>Increment</button>
       <button onClick={decrement}>Decrement</button>
     </div>
