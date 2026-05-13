@@ -8,7 +8,7 @@ const App = () => {
   return (
     <div>
       {
-        toggle ?<Register setToggle={setToggle}/> : <Login setToggle={setToggle} /> 
+        toggle?<Register setToggle={setToggle}/> : <Login setToggle={setToggle} /> 
       }
     </div>
   );
