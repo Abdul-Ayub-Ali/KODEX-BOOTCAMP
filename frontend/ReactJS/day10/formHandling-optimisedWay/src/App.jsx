@@ -105,6 +105,22 @@ export default function App() {
             Register
           </button>
         </form>
+        {/* Form ke bilkul neeche ya side mein ye add karo */}
+        
+      </div>
+      <div className="mt-10 grid grid-cols-1 gap-4 w-full max-w-4xl px-4">
+        {users.map((elem, index) => (
+          <div
+            key={index}
+            className="bg-white/20 backdrop-blur-md border border-white/30 p-5 rounded-2xl text-white shadow-lg flex flex-col gap-1"
+          >
+            <h3 className="text-xl font-bold border-b border-white/20 pb-2 mb-2">User #{index + 1}</h3>
+            <p><span className="opacity-60">Username:</span> {elem.username}</p>
+            <p><span className="opacity-60">Email:</span> {elem.email}</p>
+            <p><span className="opacity-60">Mobile:</span> {elem.mobile}</p>
+            <p><span className="opacity-60">Password:</span> ••••••••</p>
+          </div>
+        ))}
       </div>
     </div>
   );
