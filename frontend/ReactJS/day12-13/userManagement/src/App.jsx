@@ -3,10 +3,16 @@ import UserForm from "./components/UserForm";
 import UserCard from "./components/UserCard";
 import { useState } from "react";
 
-
 const App = () => {
   const [toggle, setToggle] = useState(true);
   const [members, setMembers] = useState([]);
+  const [update, setUpdate] = useState(null);
+  console.log(members);
+  const handleDelete = (id) => {
+    const updatedMembers = members.filter((elem) => elem.id !== id);
+
+    setMembers(updatedMembers);
+  };
 
   return (
     <div className="min-h-screen bg-[#f8fafc] font-sans antialiased">
@@ -36,18 +42,22 @@ const App = () => {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {members.map((card, idx) => {
-                  return <UserCard key={idx} card={card} />
-                })}
-
+                {members.map((card) => (
+                  <UserCard
+                    key={card.id}
+                    card={card}
+                    handleDelete={handleDelete}
+                    setUpdate={setUpdate}
+                    setToggle={setToggle}
+                  />
+                ))}
               </div>
             </section>
           ) : (
             <section className="flex justify-center">
-              <UserForm setMembers={setMembers} />
+              <UserForm setMembers={setMembers} setToggle={setToggle} update={update} />
             </section>
           )}
-
         </div>
       </main>
 
