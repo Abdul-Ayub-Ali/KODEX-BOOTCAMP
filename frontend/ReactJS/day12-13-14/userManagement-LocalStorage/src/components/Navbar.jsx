@@ -10,12 +10,21 @@ const Navbar = ({ setToggle }) => {
                 </div>
 
                 <div className="flex items-center gap-4">
-                    <button onClick={()=>setToggle((prev)=>!prev)} className="bg-slate-900 hover:bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-xl active:scale-95">
+                    <button
+                        onClick={() => {
+                            setToggle((prev) => {
+                                const nextValue = !prev;
+                                localStorage.setItem('isToggled', String(nextValue)); // 'true' ya 'false' string banakar save karega
+                                return nextValue;
+                            });
+                        }}
+                        className="bg-slate-900 hover:bg-black text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all shadow-xl active:scale-95"
+                    >
                         Switch View
                     </button>
-                </div>
             </div>
-        </nav>
+        </div>
+        </nav >
     );
 };
 

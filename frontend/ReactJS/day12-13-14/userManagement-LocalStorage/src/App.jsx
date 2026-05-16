@@ -4,15 +4,14 @@ import UserCard from "./components/UserCard";
 import { useState } from "react";
 
 const App = () => {
-  const [toggle, setToggle] = useState(true);
-  const [members, setMembers] = useState(JSON.parse(localStorage.getItem("users"))||[]);
+  const [toggle, setToggle] = useState(localStorage.getItem('isToggled') !== 'false');
+  const [members, setMembers] = useState(JSON.parse(localStorage.getItem("users")) || []);
   const [update, setUpdate] = useState(null);
-  console.log(members);
   const handleDelete = (id) => {
     const updatedMembers = members.filter((elem) => elem.id !== id);
 
     setMembers(updatedMembers);
-    localStorage.setItem('users',JSON.stringify(updatedMembers))
+    localStorage.setItem('users', JSON.stringify(updatedMembers))
   };
 
   return (
