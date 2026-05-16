@@ -5,13 +5,14 @@ import { useState } from "react";
 
 const App = () => {
   const [toggle, setToggle] = useState(true);
-  const [members, setMembers] = useState([]);
+  const [members, setMembers] = useState(JSON.parse(localStorage.getItem("users"))||[]);
   const [update, setUpdate] = useState(null);
   console.log(members);
   const handleDelete = (id) => {
     const updatedMembers = members.filter((elem) => elem.id !== id);
 
     setMembers(updatedMembers);
+    localStorage.setItem('users',JSON.stringify(updatedMembers))
   };
 
   return (
@@ -55,7 +56,7 @@ const App = () => {
             </section>
           ) : (
             <section className="flex justify-center">
-              <UserForm setMembers={setMembers} setToggle={setToggle} update={update} />
+              <UserForm setMembers={setMembers} members={members} setToggle={setToggle} update={update} />
             </section>
           )}
         </div>

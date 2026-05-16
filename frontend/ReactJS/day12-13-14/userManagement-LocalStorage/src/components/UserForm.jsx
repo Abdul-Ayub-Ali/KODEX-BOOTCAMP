@@ -1,22 +1,25 @@
 import { useForm } from "react-hook-form";
 import { nanoid } from "nanoid";
 
-const UserForm = ({ setMembers, setToggle, update }) => {
+const UserForm = ({ setMembers, setToggle, update, members }) => {
   const {
     register,
     handleSubmit,
     reset,
     formState: { errors },
   } = useForm({
-    mode:'onChange',
-  defaultValues: update ,
-});
+    mode: 'onChange',
+    defaultValues: update,
+  });
 
   const handleFormSubmit = (data) => {
-    setMembers((prev) => [...prev, { ...data, id: nanoid() }]);
+
+    const userData = [...members, { ...data, id: nanoid() }]
+    setMembers(userData);
+    localStorage.setItem('users', JSON.stringify(userData))
     reset();
     setToggle(true);
-    
+
   };
 
   return (
@@ -40,8 +43,8 @@ const UserForm = ({ setMembers, setToggle, update }) => {
               {...register("fullName", { required: "Full Name is required" })}
               type="text"
               className={`w-full px-4 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 outline-none transition-all ${errors.fullName
-                  ? "border-red-500 focus:ring-red-500/20"
-                  : "border-slate-200 focus:ring-indigo-500"
+                ? "border-red-500 focus:ring-red-500/20"
+                : "border-slate-200 focus:ring-indigo-500"
                 }`}
               placeholder="Enter name"
             />
@@ -66,8 +69,8 @@ const UserForm = ({ setMembers, setToggle, update }) => {
               })}
               type="email"
               className={`w-full px-4 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 outline-none transition-all ${errors.email
-                  ? "border-red-500 focus:ring-red-500/20"
-                  : "border-slate-200 focus:ring-indigo-500"
+                ? "border-red-500 focus:ring-red-500/20"
+                : "border-slate-200 focus:ring-indigo-500"
                 }`}
               placeholder="email@example.com"
             />
@@ -88,8 +91,8 @@ const UserForm = ({ setMembers, setToggle, update }) => {
             <select
               {...register("position", { required: "Selection is mandatory" })}
               className={`w-full px-4 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 outline-none transition-all ${errors.position
-                  ? "border-red-500 focus:ring-red-500/20"
-                  : "border-slate-200 focus:ring-indigo-500"
+                ? "border-red-500 focus:ring-red-500/20"
+                : "border-slate-200 focus:ring-indigo-500"
                 }`}
             >
               <option value="">Select Role</option>
@@ -114,8 +117,8 @@ const UserForm = ({ setMembers, setToggle, update }) => {
               })}
               type="number"
               className={`w-full px-4 py-2.5 bg-slate-50 border rounded-lg focus:ring-2 outline-none transition-all ${errors.experience
-                  ? "border-red-500 focus:ring-red-500/20"
-                  : "border-slate-200 focus:ring-indigo-500"
+                ? "border-red-500 focus:ring-red-500/20"
+                : "border-slate-200 focus:ring-indigo-500"
                 }`}
               placeholder="0"
             />
